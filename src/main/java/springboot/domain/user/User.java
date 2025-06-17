@@ -8,6 +8,7 @@ import springboot.domain.BaseTimeEntity;
 
 @Getter
 @NoArgsConstructor
+@Table(name = "users")
 @Entity
 public class User extends BaseTimeEntity {
     @Id
