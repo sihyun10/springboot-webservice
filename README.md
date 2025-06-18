@@ -26,3 +26,16 @@
 4장. 머스테치로 화면 구성하기  
 5장. 스프링 시큐리티와 OAuth 2.0으로 로그인 기능 구현하기   
 
+<br>  
+
+#### 첫 홈화면  
+<img width="1060" alt="image" src="https://github.com/user-attachments/assets/7a89ea14-0896-4c2e-9020-52c5f9f018d8" />  
+
+#### 게시글 등록 화면과 게시글 수정 화면    
+
+| <img src="https://github.com/user-attachments/assets/91c382ca-d129-4d7e-b0c9-39c54f9d46e3" alt="게시글등록" width="600"> | <img src="https://github.com/user-attachments/assets/c0cdefbd-cb93-43aa-bd54-a2e12a628b9e" alt="게시글수정" width="600"> |
+|-------------------------------------------------------|-------------------------------------------------------|
+
+#### 수정하고 난 후의 화면
+<img width="1029" alt="image" src="https://github.com/user-attachments/assets/e7b259ea-a7c7-4143-a986-4589216d7be9" />
+
