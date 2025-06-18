@@ -1,43 +1,53 @@
 {{>layout/header}}
 
-    <h1>스프링 부트로 시작하는 웹 서비스 Ver.2</h1>
-    <div class="col-md-12">
-        <!-- 로그인 기능 영역 -->
-        <div class="row">
-            <div class="col-md-6">
-                <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
-                {{#userName}}
-                    Logged in as: <span id="user">{{userName}}</span>
-                <a href="/logout" class="btn btn-info active" role="button">Logout</a>
-                {{/userName}}
-                {{^userName}}
-                    <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
-                    <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
-                {{/userName}}
-            </div>
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="mb-0">✏️ 게시판</h1>
+        <div>
+            {{#userName}}
+                <span class="mr-3 font-weight-bold text-primary">👤 {{userName}} 님</span>
+                <a href="/logout" class="btn btn-outline-info btn-sm">Logout</a>
+            {{/userName}}
+            {{^userName}}
+                <a href="/oauth2/authorization/google" class="btn btn-outline-success btn-sm">Login with Google</a>
+                <a href="/oauth2/authorization/naver" class="btn btn-outline-secondary btn-sm ml-2">Login with Naver</a>
+            {{/userName}}
         </div>
-        <br>
-        <!-- 목록 출력 영역 -->
-        <table class="table table-horizontal table-bordered">
-            <thead class="thead-strong">
+    </div>
+
+    <div class="mb-3 text-right">
+        <a href="/posts/save" class="btn btn-primary">+ 글 등록</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover text-center shadow-sm">
+            <thead class="thead-light">
             <tr>
-                <th>게시글번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>최종수정일</th>
+                <th scope="col">게시 번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">작성자</th>
+                <th scope="col">최종 수정일</th>
             </tr>
             </thead>
             <tbody id="tbody">
             {{#posts}}
                 <tr>
-                    <td>{{id}}</td>
-                    <td><a href="/posts/update/{{id}}">{{title}}</a></td>
+                    <th scope="row">{{id}}</th>
+                    <td class="text-left">
+                        <a href="/posts/update/{{id}}" class="text-decoration-none">{{title}}</a>
+                    </td>
                     <td>{{author}}</td>
                     <td>{{modifiedDate}}</td>
+                </tr>
+            {{/posts}}
+            {{^posts}}
+                <tr>
+                    <td colspan="4" class="text-muted">게시글이 없습니다.</td>
                 </tr>
             {{/posts}}
             </tbody>
         </table>
     </div>
+</div>
 
 {{>layout/footer}}
