@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import springboot.config.auth.LoginUser;
 import springboot.config.auth.dto.SessionUser;
 import springboot.service.PostsService;
 import springboot.web.dto.PostsResponseDto;
@@ -15,12 +16,10 @@ import springboot.web.dto.PostsResponseDto;
 public class IndexController {
 
     private final PostsService postsService;
-    private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
 
         // 세션에 저장된 값이 있을 때만 model에 userName 으로 등록한다.
         // 세션에 저장된 값이 없으면 model엔 아무런 값이 없는 상태이니 로그인 버튼이 보이게 된다.
