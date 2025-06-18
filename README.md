@@ -1,6 +1,6 @@
 ## 스프링 부트와 AWS로 혼자 구현하는 웹 서비스     
 
-![image](https://github.com/user-attachments/assets/72a12778-c390-4786-bf80-00cf1c3f37e8){:style="border:1px solid #eaeaea; border-radius: 7px; padding: 0px;" }    
+![book_image](https://github.com/user-attachments/assets/72a12778-c390-4786-bf80-00cf1c3f37e8)    
 
 **이동욱(향로)** 님의 책 **스프링 부트와 AWS로 혼자 구현하는 웹 서비스**를 보며 진행하였습니다.  
 해당 책과 Spring boot 버전, Gradle 버전을 다르게 진행하였습니다.  
